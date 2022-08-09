@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var Value = ""
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text(Value)
+            SearchBar(Label: "検索", Value: $Value)
+        }
     }
 }
 
