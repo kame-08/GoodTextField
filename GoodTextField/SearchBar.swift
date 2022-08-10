@@ -25,7 +25,7 @@ struct SearchBar: View {
                         .foregroundColor(Color.gray)
                 }
                 .focused($isForcused)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.primary)
                 
                 if !Value.isEmpty {
                     Button {
@@ -38,8 +38,8 @@ struct SearchBar: View {
                 
             }
             .foregroundColor(Color.gray)
-            .padding(10.0)
-            .background(Color(red: 0.9, green: 0.9, blue: 0.9))
+            .padding(5.0)
+            .background(Color(.tertiarySystemFill))
             .cornerRadius(10)
             
             Button {
@@ -47,9 +47,11 @@ struct SearchBar: View {
                 isForcused = false
             } label: {
                 Text("キャンセル")
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
             }
             .padding(.leading, isForcused ? 10 : -90)
-            .offset(x:(isForcused ? 0 : 100) )
+            .offset(x:(isForcused ? 0 : 120) )
             
         }
         .padding()
