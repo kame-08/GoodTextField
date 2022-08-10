@@ -12,7 +12,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text(Value)
+            
             SearchBar(Label: "検索", Value: $Value)
+                
         }
     }
 }

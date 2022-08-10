@@ -24,6 +24,8 @@ struct SearchBar: View {
                     Text(Label)
                         .foregroundColor(Color.gray)
                 }
+                //キーボードのラベルを検索に
+                .submitLabel(.search)
                 .focused($isForcused)
                 .foregroundColor(Color.primary)
                 
