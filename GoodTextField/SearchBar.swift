@@ -47,6 +47,7 @@ struct SearchBar: View {
                 isForcused = false
             } label: {
                 Text("キャンセル")
+                    .foregroundColor(isForcused ? .blue : Color(.systemBackground))
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
             }
