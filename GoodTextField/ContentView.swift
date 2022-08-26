@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var Value = ""
+    @State var text = ""
     var body: some View {
         VStack {
-            Text(Value)
+            Text(text)
             
-            SearchBar(Label: "検索", Value: $Value)
-                
+            SearchBar(text: $text, prompt: "検索")
+            
         }
     }
 }

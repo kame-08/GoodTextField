@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SearchBar: View {
     
-    @State var Label: String
-    @Binding var Value: String
+    @Binding var text: String
+    @State var prompt: String
     @FocusState var isForcused: Bool
     
     var body: some View {
@@ -20,8 +20,8 @@ struct SearchBar: View {
                 
                 Image(systemName: "magnifyingglass")
                 
-                TextField(text: $Value) {
-                    Text(Label)
+                TextField(text: $text) {
+                    Text(prompt)
                         .foregroundColor(Color.gray)
                 }
                 //キーボードのラベルを検索に
@@ -29,9 +29,9 @@ struct SearchBar: View {
                 .focused($isForcused)
                 .foregroundColor(Color.primary)
                 
-                if !Value.isEmpty {
+                if !text.isEmpty {
                     Button {
-                        Value = ""
+                        text = ""
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                     }
@@ -45,7 +45,7 @@ struct SearchBar: View {
             .cornerRadius(10)
             
             Button {
-                Value = ""
+                text = ""
                 isForcused = false
             } label: {
                 Text("キャンセル")
@@ -68,6 +68,6 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(Label: "検索", Value: .constant(""))
+        SearchBar(text: .constant(""), prompt: "検索")
     }
 }
